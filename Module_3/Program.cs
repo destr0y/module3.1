@@ -37,7 +37,7 @@ namespace Module_3
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
-        public bool TryParseNaturalNumber(string input, out ulong result)
+        public bool TryParseNaturalNumber(string input, out int result)
         {
             throw new NotImplementedException();
         }
@@ -48,14 +48,14 @@ namespace Module_3
         }
     }
 
-    public class Task5
+    public class Task3
     {
         /// <summary>
         /// Use this method to parse and validate user input
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
-        public bool TryParseNaturalNumber(string input, out ulong result)
+        public bool TryParseNaturalNumber(string input, out int result)
         {
             throw new NotImplementedException();
         }
