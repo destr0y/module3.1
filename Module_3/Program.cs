@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Module_3
 {
@@ -42,7 +43,7 @@ namespace Module_3
             throw new NotImplementedException();
         }
 
-        public IEnumerable GetEvenNumbers(int naturalNumber)
+        public List<int> GetEvenNumbers(int naturalNumber)
         {
             throw new NotImplementedException();
         }
