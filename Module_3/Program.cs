@@ -22,12 +22,29 @@ namespace Module_3
         /// <returns></returns>
         public int ParseAndValidateIntegerNumber(string source)
         {
-            throw new NotImplementedException();
+            return Convert.ToInt32(source);
         }
 
         public int Multiplication(int num1, int num2)
         {
-            throw new NotImplementedException();
+            int output = 0;
+            if (num1 > 0 && num2 > 0)
+            {
+                for (int i = 0; i < num1; i++)
+                    output += num2;
+            }
+            else if (num1 < 0 && num2 < 0)
+            {
+                for (int i = 0; i < -num1; i++)
+                    output += -num2;
+            }
+            else
+            {
+                for (int i = 0; i < Math.Max(num1,num2); i++)
+                    output += Math.Min(num1, num2);
+            }
+
+            return output;
         }
     }
 
@@ -40,12 +57,23 @@ namespace Module_3
         /// <returns></returns>
         public bool TryParseNaturalNumber(string input, out int result)
         {
-            throw new NotImplementedException();
+            var parse = int.TryParse(input, out int number);
+            if (!parse || number < 0)
+            {
+                Console.WriteLine("Unavailable input. Please, retry");
+                Console.ReadLine();
+            }
+            result = number;
+            return true;
         }
 
         public List<int> GetEvenNumbers(int naturalNumber)
         {
-            throw new NotImplementedException();
+            var output = new List<int>();
+            for (int i = 0; i < naturalNumber*2; i += 2)
+                output.Add(i);
+
+            return output;
         }
     }
 
@@ -58,12 +86,20 @@ namespace Module_3
         /// <returns></returns>
         public bool TryParseNaturalNumber(string input, out int result)
         {
-            throw new NotImplementedException();
+            var parse = int.TryParse(input, out int number);
+            if (!parse || number < 0)
+            {
+                Console.WriteLine("Unavailable input. Please, retry");
+                Console.ReadLine();
+            }
+            
+            result = number;
+            return true;
         }
 
         public string RemoveDigitFromNumber(int source, int digitToRemove)
         {
-            throw new NotImplementedException();
+            return source.ToString().Replace(digitToRemove.ToString(), "");
         }
     }
 }
