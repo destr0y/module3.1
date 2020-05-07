@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Module_3
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -22,7 +23,9 @@ namespace Module_3
         /// <returns></returns>
         public int ParseAndValidateIntegerNumber(string source)
         {
-            return Convert.ToInt32(source);
+            if (Int32.TryParse(source, out int result))
+                return result;
+            throw new ArgumentException("Invalid input");
         }
 
         public int Multiplication(int num1, int num2)
@@ -58,12 +61,13 @@ namespace Module_3
         public bool TryParseNaturalNumber(string input, out int result)
         {
             var parse = int.TryParse(input, out int number);
+            result = number;
             if (!parse || number < 0)
             {
-                Console.WriteLine("Unavailable input. Please, retry");
+                Console.WriteLine("Invalid input. Please, retry");
                 Console.ReadLine();
+                return false;
             }
-            result = number;
             return true;
         }
 
@@ -87,13 +91,13 @@ namespace Module_3
         public bool TryParseNaturalNumber(string input, out int result)
         {
             var parse = int.TryParse(input, out int number);
+            result = number;
             if (!parse || number < 0)
             {
-                Console.WriteLine("Unavailable input. Please, retry");
+                Console.WriteLine("Invalid input. Please, retry");
                 Console.ReadLine();
+                return false;
             }
-            
-            result = number;
             return true;
         }
 
